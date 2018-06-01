@@ -21,4 +21,11 @@ class Trip < ApplicationRecord
       0
     end
   end
+  def min_trail_length
+    unless self.trails.empty?
+      trails.minimum(:length)
+    else
+      0
+    end
+  end
 end

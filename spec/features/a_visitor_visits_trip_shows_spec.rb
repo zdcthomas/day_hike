@@ -20,6 +20,10 @@ RSpec.feature "AVisitorVisitsTripShows", type: :feature do
           expect(page).to have_content(trail.name)
           expect(page).to have_content(trail.length)
           expect(page).to have_content(trail.address)
+          expect(page).to have_link(trail.name)
+          click_on(trail.name)
+          expect(current_path).to eq(trail_path(trail))
+          visit(trip_path(@trip1))
         end
       end
     end
