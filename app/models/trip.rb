@@ -13,4 +13,12 @@ class Trip < ApplicationRecord
       0
     end
   end
+
+  def max_trail_length
+    unless self.trails.empty?
+      trails.maximum(:length)
+    else
+      0
+    end
+  end
 end
