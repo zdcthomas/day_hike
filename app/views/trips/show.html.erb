@@ -7,6 +7,6 @@
 
 <% @trails.each do |trail| %>
   <%= trail.length %>
-  <%= trail.name %>
+  <%= link_to  "#{trail.name}", trail_path(trail) %>
   <%= trail.address %>
 <% end %>
