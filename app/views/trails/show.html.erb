@@ -1,6 +1,6 @@
 Name: <%= @trail.name %>
 Address: <%= @trail.address %>
-Trip Count: <%= @trail.trip_count %>
+Total trip count that includes this trail: <%= @trail.trip_count %>
 <% @trips.each do |trip|%>
   Trip: <%= trip.name %>
   Total Length: <%= trip.total_trail_length %>
