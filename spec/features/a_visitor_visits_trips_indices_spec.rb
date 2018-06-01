@@ -14,7 +14,18 @@ RSpec.feature "AVisitorVisitsTripsIndices", type: :feature do
 
         Trip.all.each do |trip|
           expect(page).to have_content(trip.name)
+          expect(page).to have_link(trip.name)
         end
+      end
+      it 'should contain links to each trip page' do
+        @trip1 = Trip.create!(name:'some trip')
+        @trip2 = Trip.create!(name:'some other trip')
+
+        visit trips_path
+
+        click_on(@trip1.name)
+        
+        expect(current_path).to eq(trip_path(@trip1))
       end
     end
   end
