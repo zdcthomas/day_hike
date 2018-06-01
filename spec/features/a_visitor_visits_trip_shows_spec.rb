@@ -13,6 +13,7 @@ RSpec.feature "AVisitorVisitsTripShows", type: :feature do
 
         expect(page).to have_content(@trip1.total_trail_length)
         expect(page).to have_content(@trip1.average_trail_length)
+        expect(page).to have_content(@trip1.max_trail_length)
 
         @trip1.trails.each do |trail|
           expect(page).to have_content(trail.name)
