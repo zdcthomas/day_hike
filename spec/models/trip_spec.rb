@@ -19,7 +19,7 @@ RSpec.describe Trip, type: :model do
         @trip1.trails.create!(length:4, name:'sad',address:'123 fds')
         @trip1.trails.create!(length:6, name:'mediocre',address:'124 asdf')
 
-        expect(@trip1.average_trail_length).to eq(4.34)
+        expect(@trip1.average_trail_length).to eq(4.33)
 
       end
     end
