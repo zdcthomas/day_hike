@@ -33,5 +33,15 @@ RSpec.describe Trip, type: :model do
         expect(@trip1.max_trail_length).to eq(6)
       end
     end
+    describe 'max trail length' do 
+      it 'should return the minimum trail lenght for that trip' do
+        @trip1 = Trip.create!(name:'some trip')
+        @trip1.trails.create!(length:3, name:'happy',address:'123 asdf')
+        @trip1.trails.create!(length:4, name:'sad',address:'123 fds')
+        @trip1.trails.create!(length:6, name:'mediocre',address:'124 asdf')
+
+        expect(@trip1.min_trail_length).to eq(3)
+      end
+    end
   end
 end
